@@ -12,7 +12,7 @@ export default class Button extends Vue {
   @Prop({ default: 'primary' }) readonly color!: 'primary' | 'success' | 'info';
   @Prop({ default: false }) readonly disabled!: boolean;
   @Prop({ default: false }) readonly loading!: boolean;
-  @Prop({}) readonly icon: string | undefined;
+  @Prop({}) readonly icon?: string;
 
   colorClasses = {
     primary: 'blue',
