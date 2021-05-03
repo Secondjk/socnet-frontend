@@ -1,14 +1,33 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
-import Temp from '@/views/Temp.vue';
 
 Vue.use(VueRouter);
 
-const routes: Array<RouteConfig> = [
+const title = (name: string) => ({ title: `Messenger - ${name}`, name });
+
+const routes: RouteConfig[] = [
   {
     path: '/',
     name: 'Main',
-    component: Temp
+    redirect: '/my-page'
+  },
+  {
+    path: '/my-page',
+    name: 'my-page',
+    meta: title('Моя страница'),
+    component: () => import("@/views/common/Temp.vue")
+  },
+  {
+    path: '/friends',
+    name: 'friends',
+    meta: title('Друзья'),
+    component: () => import("@/views/sections/Friends.vue")
+  },
+  {
+    path: '/chat',
+    name: 'chat',
+    meta: title('Мессенджер'),
+    component: () => import("@/views/common/Temp.vue")
   }
 ];
 

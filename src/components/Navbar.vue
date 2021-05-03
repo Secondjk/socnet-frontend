@@ -10,11 +10,7 @@ import IconBell from '@/components/icons/IconBell.vue';
     Button
   }
 })
-export default class Navbar extends Vue {
-  public showNotifications() {
-    console.log(123);
-  }
-}
+export default class Navbar extends Vue {}
 </script>
 
 <template>
@@ -27,18 +23,14 @@ export default class Navbar extends Vue {
               <div class="flex items-center justify-between h-16 px-4 sm:px-0">
                 <div class="flex items-center">
                   <div>
-                    <div class="flex items-baseline space-x-4">
-                      <a
-                        href="#"
-                        class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-                        >Сообщения</a
-                      >
-                      <a
-                        href="#"
-                        class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                        >Друзья</a
-                      >
-                    </div>
+                    <router-link class="flex items-center text-white space-x-4" to="/">
+                      <img
+                          class="h-10 w-10 rounded-full"
+                          src="https://picsum.photos/100/100"
+                          alt="Logo"
+                      />
+                      <h2 class="font-bold">Messenger</h2>
+                    </router-link>
                   </div>
                 </div>
                 <div>
